@@ -79,16 +79,19 @@ body {
     /* background: url('../arrow.svg"') center/cover; */
 }
 img {
-    padding-left: 280px;
+    padding-left: 240px;
 }
 
 .container {
-    max-width: 340px;
+    max-width: 450px;
     width: 100%;
-    min-height: 270px;
     border: 1px solid grey;
     border-radius: 10px;
     background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .yellow{
     background-color: rgb(242, 201, 40);
@@ -113,29 +116,72 @@ img {
     border-radius: 10px;
 }
 
-.inputs__item {
+.inp {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 280px;
     margin-bottom: 10px;
+     border:1px solid grey;
+     border-radius: 10px;
+}
+.lists{
+    position: relative;
+    word-wrap: break-word;
+    word-break: break-all;
+    
+        /* width: 80%; */
+        border-radius: 10px;
+        border: none;
+        font-family: "Roboto", serif;
+        color: black;
+        /* border:1px solid grey; */
 }
 
+ol{
+    width: 280px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: 9fr 1fr;
+    grid-template-areas: 
+    "li span";
+}
+.cross1{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid grey;
+    border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: grey;
+    transform: rotate(45deg);
+    cursor: pointer;
+    background: white;
+    margin-right: 10px;
+}
 input {
     width: 90%;
     border-radius: 10px;
-    /* border: none; */
+    border: none;
     height: 40px;
     padding: 0 70px 0 30px;
     font-family: "Roboto", serif;
     color: black;
-    border:1px solid grey;
+    /* border:1px solid grey; */
 }
 
 input:focus {
     outline: none;
-    border: 1px solid grey;
 }
+
 
 .btn-delete,
 .btn2-delete {
@@ -155,10 +201,13 @@ input:focus {
     margin-right: 10px;
 }
 
-btn-delete:hover{
+.btn-delete:hover,.cross1:hover{
     background-color: rgb(124, 61, 158);
+    color: white;
 }
-
+.disnone{
+    display: none;
+}
 .btn-sort {
     display: flex;
     justify-content: end;
@@ -175,6 +224,7 @@ btn-delete:hover{
     cursor: pointer;
     width: 150px;
     margin: auto;
+    margin-bottom: 18px;
 }
 
 .btn-add__left {
@@ -219,10 +269,10 @@ btn-delete:hover{
     background: rgb(166, 91, 207);
     position: relative;
 }
-
+/* 
 #done>div {
     margin-bottom: 10px
-}
+} */
 
 #done input {
     background: #a4fa99
