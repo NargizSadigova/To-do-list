@@ -1,73 +1,10 @@
-/* body {
-    font-family: Arial, sans-serif;
-    background-color: #F0F0F0;
-}
-
-.container {
-    width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.input-container {
-    display: flex;
-    align-items: center;
-}
-
-.input-container input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.input-container button {
-    padding: 10px 20px;
-    background-color: #6A5ACD; 
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#task-list {
-    list-style: none;
-    padding: 0;
-}
-
-#task-list li {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #F0F0F0; 
-}
-
-#task-list li:nth-child(odd) {
-    background-color: #E0E0E0; 
-}
-
-.delete-button {
-    float: right;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: red;
-} */
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Overpass+Mono:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-*{
+
+* {
     box-sizing: border-box;
     font-family: "Roboto", serif;
 }
+
 body {
     display: flex;
     flex-direction: column;
@@ -76,10 +13,6 @@ body {
     min-height: 100vh;
     padding: 10px 20px;
     gap: 5px;
-    /* background: url('../arrow.svg"') center/cover; */
-}
-img {
-    padding-left: 240px;
 }
 
 .container {
@@ -93,7 +26,8 @@ img {
     justify-content: center;
     align-items: center;
 }
-.yellow{
+
+.yellow {
     background-color: rgb(242, 201, 40);
     width: 100%;
     height: 40px;
@@ -109,48 +43,50 @@ img {
     font-family: "Roboto", serif;
 }
 
-
-.inputs {
-    border: none;
-    margin-bottom: 20px;
-    border-radius: 10px;
-}
-
 .inp {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 280px;
+    width: 350px;
     margin-bottom: 10px;
-     border:1px solid grey;
-     border-radius: 10px;
-}
-.lists{
-    position: relative;
-    word-wrap: break-word;
-    word-break: break-all;
-    
-        /* width: 80%; */
-        border-radius: 10px;
-        border: none;
-        font-family: "Roboto", serif;
-        color: black;
-        /* border:1px solid grey; */
+    border: 1px solid grey;
+    border-radius: 10px;
 }
 
-ol{
-    width: 280px;
+input {
+    width: 90%;
+    border-radius: 10px;
+    border: none;
+    height: 40px;
+    padding: 0 70px 0 30px;
+    font-family: "Roboto", serif;
+    color: black;
+}
+
+input:focus {
+    outline: none;
+}
+
+.lists {
+    position: relative;
+    padding-right: 40px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    font-family: "Roboto", serif;
+    color: black;
+}
+
+ol {
+    width: 350px;
     border: 1px solid grey;
     border-radius: 10px;
     padding-top: 10px;
-    padding-bottom: 10px;
-    display: grid;
-    grid-template-columns: 9fr 1fr;
-    grid-template-areas: 
-    "li span";
+    padding-bottom: 5px;
 }
-.cross1{
+
+.cross2 {
     position: absolute;
     top: 0;
     right: 0;
@@ -166,25 +102,10 @@ ol{
     cursor: pointer;
     background: white;
     margin-right: 10px;
-}
-input {
-    width: 90%;
-    border-radius: 10px;
-    border: none;
-    height: 40px;
-    padding: 0 70px 0 30px;
-    font-family: "Roboto", serif;
-    color: black;
-    /* border:1px solid grey; */
+    transition: .5s
 }
 
-input:focus {
-    outline: none;
-}
-
-
-.btn-delete,
-.btn2-delete {
+.cross1 {
     border: 1px solid grey;
     border-radius: 50%;
     width: 23px;
@@ -194,29 +115,42 @@ input:focus {
     align-items: center;
     color: grey;
     position: absolute;
-    right: 15px;
+    right: 10px;
     transform: rotate(45deg);
     cursor: pointer;
     background: white;
-    margin-right: 10px;
+    transition: .5s
 }
 
-.btn-delete:hover,.cross1:hover{
+.cross1:hover,
+.cross2:hover {
     background-color: rgb(124, 61, 158);
     color: white;
 }
-.disnone{
+
+.disnone {
     display: none;
 }
+
+span {
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
 .btn-sort {
+    cursor: pointer;
+    display: inline;
     display: flex;
     justify-content: end;
     margin-bottom: 10px;
 }
 
-.btn-sort  {
+img {
     cursor: pointer;
     display: inline;
+    display: flex;
+    justify-content: end;
+    padding-left: 315px;
 }
 
 .btn-add {
@@ -227,7 +161,7 @@ input:focus {
     margin-bottom: 18px;
 }
 
-.btn-add__left {
+.left {
     font-size: 25px;
     color: #fff;
     background: rgb(166, 91, 207);
@@ -242,7 +176,7 @@ input:focus {
     transition: .5s;
 }
 
-.btn-add__right {
+.right {
     background: rgb(124, 61, 158);
     display: flex;
     align-items: center;
@@ -257,143 +191,47 @@ input:focus {
     transition: .5s;
 }
 
-#done {
-    width: 350px;
-    padding: 10px;
-    border: 1px solid #aaa;
-    max-width: 340px;
-    width: 100%;
-    min-height: 500px;
-    border: 1px solid white;
-    border-radius: 10px;
-    background: rgb(166, 91, 207);
-    position: relative;
-}
-/* 
-#done>div {
-    margin-bottom: 10px
-} */
-
-#done input {
-    background: #a4fa99
-}
-
-.cross {
-    transition: .5s
-}
-
-.popup {
-    position: absolute;
-    display: inline-block;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    top: 10px;
-}
-
-.popup .popuptext {
-    visibility: hidden;
-    width: 160px;
-    background-color: red;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -80px;
-}
-
-.popup .popuptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: red transparent transparent transparent;
-}
-
-.popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
-}
-
-
-
-.popup {
-    left: 50%;
-    transform: translate(-50%, 0);
-    top: -5px;
-}
-
-.btn-done {
-    display: inline-block;
-    font-size: 1.6em;
-    border: 0;
-    color: rgb(166, 91, 207);
-    margin-right: 10px;
-    background: transparent;
-}
-
-#done .inputs__item .btn-done {
-    display: none;
-}
-
-.hint-desktop, .hint-mobile {
-    font: 900 28px 'Roboto', sans-serif;
-    color: #fff;
-    text-align: center;
-}
-
-.hint-mobile  {
-    font-size: 1em;
-}
-
-.hint-desktop {
-    display: none;
-}
-
-
-/* @media only screen and (min-width: 768px) {
-
-    body {
-        flex-direction: row;
-        gap: 200px;
-        background: url('../img/bodyBg1.png') center/cover;
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+    .container {
+        max-width: 320px;
+        width: 100%;
     }
 
-    .btn-add:hover .btn-add__left {
-        transform: rotate(180deg)
+    .yellow {
+        width: 100%;
+        height: 30px;
     }
 
-    .btn-add:hover div {
-        background: #fff;
-        border: 1px solid var(--pink2);
-        color: var(--pink2);
+    .title {
+        font-weight: bold;
+        font-size: 1.8em;
     }
 
-    .cross:hover {
-        transform: rotate(180deg);
-        background: var(--pink);
-        color: #fff;
+    .inp {
+        width: 250px;
+        margin-bottom: 10px;
     }
 
-    .btn-done {
-        display: none;
+    input {
+        width: 90%;
+        border-radius: 10px;
+        border: none;
+        height: 40px;
+        padding: 0 70px 0 30px;
     }
 
-    .hint-desktop {
-        display: block;
+    .lists {
+        padding-right: 40px;
+        width: 100%;
     }
 
-    .hint-mobile {
-        display: none;
+    ol {
+        width: 250px;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
-} */
+
+    img {
+        padding-left: 220px;
+    }
+}
